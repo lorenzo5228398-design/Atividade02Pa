@@ -227,6 +227,10 @@ public class JframeCadastro extends javax.swing.JFrame {
         String nome = txtNome.getText();
         String preco = txtPreco.getText();
         String estoque = txtEstoque.getText();
+        
+        double precoConvertido = Double.parseDouble(preco);
+        double estoqueConvertido = Integer.parseInt(estoque);
+        
 
 
     }//GEN-LAST:event_btnCadastrarMouseClicked

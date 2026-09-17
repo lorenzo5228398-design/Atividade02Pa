@@ -15,14 +15,18 @@ public class ProdutoDAO {
         try  (Connection conexao = Conexao.conectar(); 
                 
             PreparedStatement comando = conexao.prepareStatement(sql)) {
+            
             comando.setString(1, produto.getNome());
             comando.setDouble(2, produto.getPreco());
             comando.setInt(3, produto.getEstoque());
             comando.executeUpdate();
+            
             System.out.println("Produto cadastrado com sucesso");
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar produto. " + e.getMessage());
 
         }
     }
+    
+    
 }

@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import model.Produto;
 import dao.Conexao;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProdutoDAO {
 
@@ -29,4 +32,34 @@ public class ProdutoDAO {
     }
     
     
+     public List<Produto> listar() {
+
+        List<Produto> produtos = new ArrayList<>();
+
+        String sql = """
+				COMANDO SQL
+            """;
+
+        try (Connection conexao = Conexao.conectar();
+             PreparedStatement comando = conexao.prepareStatement(sql);
+             ResultSet resultado = comando.executeQuery()) {
+
+            while (resultado.next()) {
+
+                Produto produto = new Produto(
+                    resultado.getInt("id"),
+                    resultado.getString("nome"),
+                    resultado.getDouble("preco"),
+                    resultado.getInt("estoque")
+                );
+
+                produtos.add(produto);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao listar produtos: " + e.getMessage());
+        }
+
+        return produtos;
+     }
 }

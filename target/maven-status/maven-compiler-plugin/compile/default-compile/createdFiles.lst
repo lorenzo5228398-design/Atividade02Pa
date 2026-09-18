@@ -1,9 +1,11 @@
 view\JframeCadastro$1.class
 dao\Conexao.class
 dao\ProdutoDAO.class
+view\JframeCadastro$5.class
 model\Produto.class
 view\JframeCadastro$3.class
 view\JframeCadastro.class
 controller\ProdutoContoller.class
 view\JframeCadastro$2.class
 main\Atividade02Pa.class
+view\JframeCadastro$4.class

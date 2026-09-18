@@ -22,8 +22,6 @@ public class Produto {
         this.preco = preco;
         this.estoque = estoque;
     }
-    
-    
 
     public int getId() {
         return id;
@@ -56,8 +54,9 @@ public class Produto {
     public void setEstoque(int estoque) {
         this.estoque = estoque;
     }
-    
-    
-    
 
+    public double getPrecoComLucro() {
+        double percentualLucro = 0.20;
+        return preco * (1 + percentualLucro);
+    }
 }

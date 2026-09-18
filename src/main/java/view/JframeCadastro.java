@@ -393,8 +393,8 @@ public class JframeCadastro extends javax.swing.JFrame {
             tabela.addRow(new Object[]{
                 produto.getNome(),
                 String.format("%.2f", produto.getPreco()),
-                produto.getEstoque()
-
+                produto.getEstoque(),
+                String.format("%.2f", produto.getPrecoComLucro())
             });
 
         }
